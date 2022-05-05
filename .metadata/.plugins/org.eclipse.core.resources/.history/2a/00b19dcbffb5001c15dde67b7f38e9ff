@@ -1,0 +1,16 @@
+package br.com.senaisp.aula04;
+
+public class ExemploConversoes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Definindo uma variável double com um valor qualquer
+		double dblTeste = 51999999999999999999999999999999999999999.12;
+		System.out.println("Double:" + dblTeste);
+		//Convertendo para float
+		float fltTeste = (float) dblTeste;
+		System.out.println("Float:" + fltTeste);
+
+	}
+
+}

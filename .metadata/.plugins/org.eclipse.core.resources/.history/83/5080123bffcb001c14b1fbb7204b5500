@@ -1,0 +1,26 @@
+package br.com.senaisp.aula13;
+
+import java.util.Scanner;
+
+public class aula13exer01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String strNome[] = new String [10];
+		Scanner sc = new Scanner (System.in);
+		//Entrando com os nomes dos clientes
+				for(int intI=0;intI<10;intI++) {
+					System.out.println("Digite para cadastro" + (intI + 1) +" :")
+					strNome[intI] = sc.nextLine();
+				}
+		// Ordenando os Valores
+				
+				//Mostrando os nomes
+				System.out.println("Mostrando os nomes digitados!");
+				for (int intI=0;intI < 10; intI++){
+					System.out.println(strNome[intI]);
+				}
+				sc.close();
+	}
+
+}

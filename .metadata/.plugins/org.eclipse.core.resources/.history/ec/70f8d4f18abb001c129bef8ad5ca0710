@@ -1,0 +1,16 @@
+package br.com.senaisp.aula07;
+
+public class Aula07Exe01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for (int intValor = 100; intValor > 1; intValor--) {
+			if (intValor % 2 == 0)
+				System.out.println(" O número" + intValor + " é par ");
+			else
+				System.out.println(" O número " + intValor + " é impar ");
+					
+System.out.println(" Valor depois do for " + intValor);
+	}
+	}
+}
