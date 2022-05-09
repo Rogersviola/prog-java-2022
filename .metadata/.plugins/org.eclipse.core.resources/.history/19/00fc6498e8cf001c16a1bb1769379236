@@ -21,8 +21,7 @@ public class aula13exer01 {
 						if (strNome[intI].compareToIgnoreCase(strNome[intF])>0) {
 							strApoio = strNome[intI];
 							strNome[intI] = strNome[intF];
-							strNome[intF] = strApoio;
-							
+							strNome[intF] = strApoio; 
 							
 						}
 					}
