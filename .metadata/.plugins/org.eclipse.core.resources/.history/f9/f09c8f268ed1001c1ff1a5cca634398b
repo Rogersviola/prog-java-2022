@@ -1,0 +1,28 @@
+package br.com.senaisp.aula16;
+
+import java.util.Scanner;
+
+import br.com.senaisp.aula16.classes.Clientes;
+
+public class Aula16Exe02 {
+	public static final int LIMITE_CLIENTE = 10;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Clientes cliVetor[] = new Clientes[LIMITE_CLIENTE];
+		Scanner sc = new Scanner(System.in);
+		int intOpc;
+		do {
+			System.out.println("Menu de Opções");
+			System.out.println("1 - Cadastro");
+			System.out.println("2 - Consulta");
+			System.out.println("3 - Alteração");
+			System.out.println("4 - Exclusão");
+			System.out.println("5 - Listagem");
+			System.out.println("9 - Fim");
+			System.out.println("Digite sua Opção");
+			intOpc = sc.nextInt();
+			sc.nextLine();
+		}while (intOpc!=9);
+	}
+
+}

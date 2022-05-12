@@ -2,13 +2,14 @@ package br.com.senaisp.aula14;
 
 import java.util.Scanner;
 
+import br.com.senaisp.aula14.classes.MamiferosEncapsulada;
 import br.com.senaisp.aula14.classes.MamíferosEncapsulada;
 
 public class ExemploMamíferosEncapsulado {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MamíferosEncapsulada humano = new MamíferosEncapsulada ();
+		MamiferosEncapsulada humano = new MamiferosEncapsulada ();
 		Scanner sc = new Scanner (System.in);
 		System.out.println("Digite a cor da pele do humano:");
 		humano.setPele(sc.nextLine());
