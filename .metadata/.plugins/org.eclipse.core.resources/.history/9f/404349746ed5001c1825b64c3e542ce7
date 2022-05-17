@@ -1,0 +1,5 @@
+package br.com.senaisp.aula17.classes;
+
+public class Felino extends Mamiferos {
+
+}

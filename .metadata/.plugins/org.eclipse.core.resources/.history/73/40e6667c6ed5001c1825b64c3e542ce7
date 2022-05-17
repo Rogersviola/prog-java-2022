@@ -1,0 +1,10 @@
+package br.com.senaisp.aula17.classes;
+
+public class Mamiferos {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
