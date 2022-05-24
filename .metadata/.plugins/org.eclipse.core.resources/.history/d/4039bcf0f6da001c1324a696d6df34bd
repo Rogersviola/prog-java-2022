@@ -1,0 +1,11 @@
+package br.com.senaisp.aula20.classes;
+
+public class Moto extends Veiculo {
+
+	@Override
+	public void ligarVeiculo() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
