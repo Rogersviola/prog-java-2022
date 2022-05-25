@@ -3,6 +3,8 @@ package br.com.senaisp.aula21.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.senaisp.aula22.classes.ConexaoFake;
+
 public class Cliente {
 	private List<Cliente> listaClientes;
 	private int codigo;
@@ -11,6 +13,8 @@ public class Cliente {
 
 	public Cliente() {
 		super();
+		ConexaoFake fake = ConexaoFake.getInstance();
+		
 		listaClientes = new ArrayList<Cliente>();
 
 	}
@@ -42,6 +46,14 @@ public class Cliente {
 	public void adicionar() {
 		int intId = pesqCliente(this.codigo);
 		if (intId ==-1) {
+			//criar o objeto cliente para adicionar as informacoes
+			Cliente cli = new Cliente();
+			//setando os dados para o novo objeto
+			cli.setCodigo(codigo);
+			cli.setNome(nome);
+			cli.setEndereco(endereco);
+			//colocando o objeto na lista
+			
 			listaClientes.add(this);
 			
 		}else {
@@ -58,5 +70,25 @@ public class Cliente {
 			}
 		}
 		return intRet;
+	}
+	public void listarClientes() {
+		System.out.println("Listagem de clientes");
+		System.out.println("# - Codigo - Nome");
+		System.out.println("-----------------------");
+		for(int intI=0;intI<listaClientes.size();intI++) {
+			Cliente cli = listaClientes.get(intI);
+			System.out.print(intI + " - ");
+			System.out.print(cli.getCodigo() + " - ");
+			System.out.print(cli.getNome() + " - ");
+			System.out.println(cli.toString() + " - " + cli.getListaSize());
+			
+			
+			
+		}
+		
+	}
+	public int getListaSize() {
+		return listaClientes.size();
+		
 	}
 }
