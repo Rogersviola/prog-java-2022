@@ -7,4 +7,11 @@
     <fullyQualifiedTypeName name="br.com.senaisp.aula14.classes.Mamíferos"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="br.com.senaisp.aula14.classes.MamiferosEncapsulada"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Mamiferos"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Cachorro"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Humano"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.SuperMaquina"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Moto"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Carro"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
 </qualifiedTypeNameHistroy>
