@@ -1,4 +1,3 @@
-
 package br.com.senaisp.aula13;
 
 import java.util.Scanner;

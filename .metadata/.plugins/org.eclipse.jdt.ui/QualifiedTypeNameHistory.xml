@@ -14,4 +14,7 @@
     <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Moto"/>
     <fullyQualifiedTypeName name="br.com.senaisp.aula20.classes.Carro"/>
     <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula21.classes.Pedido"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula21.classes.Produto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

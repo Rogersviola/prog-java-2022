@@ -91,4 +91,16 @@ public class Cliente {
 		return listaClientes.size();
 		
 	}
+	public void alterar() {
+		int intId=pesqCliente(codigo);
+		if (intId >-1) {
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
 }
