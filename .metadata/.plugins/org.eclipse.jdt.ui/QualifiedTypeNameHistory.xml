@@ -17,4 +17,7 @@
     <fullyQualifiedTypeName name="br.com.senaisp.aula21.classes.Pedido"/>
     <fullyQualifiedTypeName name="br.com.senaisp.aula21.classes.Produto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula21.classes.Cliente"/>
+    <fullyQualifiedTypeName name="br.com.senaisp.aula22.classes.ConexaoFake"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
