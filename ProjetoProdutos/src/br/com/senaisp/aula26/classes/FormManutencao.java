@@ -57,7 +57,8 @@ public class FormManutencao extends JFrame {
 
 		setTitle("Manuten\u00E7\u00E3o de Produtos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 731, 561);
+		setBounds(100, 100, 700, 552);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

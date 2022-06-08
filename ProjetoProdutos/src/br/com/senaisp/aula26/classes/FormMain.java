@@ -45,8 +45,8 @@ public class FormMain extends JFrame {
 		
 		setTitle("Formul\u00E1rio Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		
+		setBounds(100, 100, 700, 552);
+		setLocationRelativeTo(null);
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
