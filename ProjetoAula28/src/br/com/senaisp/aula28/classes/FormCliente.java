@@ -20,6 +20,8 @@ import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FormCliente extends JFrame {
 
@@ -64,6 +66,15 @@ public class FormCliente extends JFrame {
 		panel.add(btnConsultar);
 		
 		JButton btnAlterar = new JButton("Alterar");
+		btnAlterar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FormClienteManutencao fmtCli = new FormClienteManutencao();
+				fmtCli.setTblMdCli(tblMdCli);
+				fmtCli.setLnhaSelecionada(tblCliente.getSelectedRow());
+				fmtCli.setTipoOperacao(3);
+				fmtCli.setVisible(true);
+			}
+		});
 		panel.add(btnAlterar);
 		
 		JButton btnExcluir = new JButton("Excluir");
