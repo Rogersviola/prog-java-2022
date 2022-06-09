@@ -1,15 +1,15 @@
 package br.com.senaisp.aula20.classes;
 
 public abstract class Mamiferos {
-private String corPele;
+	private String corPele;
 	private int idade;
-	
 	
 	public Mamiferos(String corPele, int idade) {
 		super();
 		this.corPele = corPele;
 		this.idade = idade;
 	}
+	
 	public String getCorPele() {
 		return corPele;
 	}
