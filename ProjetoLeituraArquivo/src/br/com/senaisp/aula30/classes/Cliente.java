@@ -1,9 +1,11 @@
 package br.com.senaisp.aula30.classes;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -103,7 +105,11 @@ public class Cliente {
 		XML
 		
 	}
+				
+	
 	public boolean importarArquivo(String strArquivo, TipoArquivo tpArq) {
+		
+		
 		boolean ret = false;
 		switch (tpArq) {
 		case CSV:
@@ -116,6 +122,91 @@ public class Cliente {
 		}
 		return ret;
 	}
+
+	public boolean exportarArquivo(String strArquivo, TipoArquivo tpArq) {
+		boolean ret = false;
+		switch (tpArq) {
+		case CSV: ret = escreverCSV (strArquivo); break;
+		case JSON: ret = escreverJSON (strArquivo);break;
+		case XML: ret = escreverXML (strArquivo);break;
+		
+		}
+		return ret;
+	}
+	
+	private boolean escreverCSV(String strArquivo) {
+		boolean ret = false;
+		try {
+			FileOutputStream fos = new FileOutputStream(strArquivo);
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter buf = new BufferedWriter(osw);
+			//gravando o cabecalho do arquivo csv
+			buf.write("nome, idade, cpf, rg, data_nasc\r\n");
+			//usando o foreach para pegar os itens da lista
+			for (Object it[] : lstClientes) {
+				buf.write(it[0] + " , ");//nome
+				buf.write(it[1] + " , ");//idade
+				buf.write(it[2] + " , ");//cpf
+				buf.write(it[3] + " , ");//rg
+				buf.write(dtFmt.format(it[4] + " , "));//data_nasc
+				buf.write( "\r\n ");//quebra de linha
+				
+								
+				
+			}
+		buf.close();
+		ret=true;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ret;
+	}
+	
+	
+	
+	
+	
+	
+	private boolean escreverXML(String strArquivo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean escreverJSON(String strArquivo) {
+		boolean ret = false;
+		try {
+			FileOutputStream fos = new FileOutputStream(strArquivo);
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			BufferedWriter buf = new BufferedWriter(osw);
+			
+			JSONArray itens = new JSONArray();
+			for(Object objs[] : lstClientes) {
+				//criando objeto JSON
+			}
+				JSONObject item = new JSONObject();
+				item.put("nome", objs[0]);
+				item.put("idade", objs[1]);
+				item.put("cpf", objs[2]);
+				item.put("rg", objs[3]);
+				item.put("data_nasc",dtFmt.format( objs[4]));
+				//adicionando item ao vetor
+				itens.put(item);
+					
+			}
+		//gravando o JSON String
+		buf.write(itens.toString());
+		buf.close();
+		ret = true;
+		
+		
+		
+	}catch (Exception e) {
+		e.printStackTrace();
+	}
+	return ret;
+	}
+
+	
 
 	private boolean lerXML(String strArquivo) {
 		boolean  ret = false;
