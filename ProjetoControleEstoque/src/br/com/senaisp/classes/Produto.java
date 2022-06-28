@@ -65,7 +65,68 @@ public void novo() {
 	local_estoque = null;
 	
 }
+public boolean read() {
+	boolean ret = false;
+	String sql = "select id, descricao,saldo,preco, local_estoque from produtos where id=?";
+	try {
+		conn.conectarBD();
+		PreparedStatement stmt = conn.getConector().prepareStatement(sql);
+		//setando os parametros
+		stmt.setInt(1, id);
+		//executando a instrucao
+		ResultSet rs = stmt.executeQuery();
+		//verificando se encontrou o dado
+		if (rs.next()) {
+			//log
+			System.out.println("Encontrou o registro!");
+			id = rs.getInt(1);
+			descricao = rs.getString(2);
+			saldo = rs.getInt(3);
+			preco = rs.getDouble(4);
+			local_estoque = rs.getString(5);
+			
+			ret =  true;
+			
+		}else {
+			//log
+			System.out.println("Não encontrou o registro!");
+		}
+		conn.desconectarBD();
+	} catch (SQLException e) {
+haErro = true;
+msgErro = e.getMessage();
+	}
+	return ret;
+	
+}
+public boolean update() {
+	boolean ret = false;
+	//update nunca esqueca colocar where(quando) senao ira setar tudo
+	String sql = "update produtos set descricao =?,saldo=?,preco=?,local_estoque=? where id = ?";
+	try {
+		conn.conectarBD();
+		PreparedStatement stmt = conn.getConector().prepareStatement(sql);
+		//setando os valores
+		stmt.setString(1, descricao);
+		stmt.setInt(2, saldo);
+		stmt.setDouble(3, preco);
+		stmt.setString(4, local_estoque);
+		stmt.setInt(5, id);
+		//executando alteracao
+		int rowsAff = stmt.executeUpdate();
+		//log
+		System.out.println("LInhas alteradas:" + rowsAff);
+		//desconectando do banco de dados
+		conn.desconectarBD();
+		ret = true;
+	} catch (SQLException e) {
+haErro = true;
+msgErro= e.getMessage();
 
+
+	}
+	return ret;
+}
 public int getId() {
 	return id;
 }
@@ -104,6 +165,19 @@ public String getLocal_estoque() {
 
 public void setLocal_estoque(String local_estoque) {
 	this.local_estoque = local_estoque;
+}
+public boolean isHaErro() {
+	return haErro;
+}
+public void setHaErro(boolean haErro) {
+	this.haErro = haErro;
+}
+public void setMsgErro(String msgErro) {
+	this.msgErro = msgErro;
+}
+public String getMsgErro() {
+	// TODO Auto-generated method stub
+	return msgErro;
 }
 
 }
