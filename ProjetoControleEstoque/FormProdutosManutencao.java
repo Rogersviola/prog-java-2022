@@ -1,4 +1,4 @@
-package br.com.senaisp.Forms;
+package br.com.senaisp.forms;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

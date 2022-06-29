@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -43,8 +44,10 @@ public class FormProdutos extends JFrame {
 	 * Create the frame.
 	 */
 	public FormProdutos() {
+		EventoClick evt = new EventoClick();
+
 		setTitle("Manuten\u00E7\u00E3o de produtos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 562, 455);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,15 +59,19 @@ public class FormProdutos extends JFrame {
 
 		JButton btnAdicionar = new JButton("Adicionar");
 		pnlBotoes.add(btnAdicionar);
+		btnAdicionar.addActionListener(evt);
 
 		JButton btnConsultar = new JButton("Consultar");
 		pnlBotoes.add(btnConsultar);
+		btnConsultar.addActionListener(evt);
 
 		JButton btnAlterar = new JButton("Alterar");
 		pnlBotoes.add(btnAlterar);
+		btnAlterar.addActionListener(evt);
 
 		JButton btnExcluir = new JButton("Excluir");
 		pnlBotoes.add(btnExcluir);
+		btnExcluir.addActionListener(evt);
 
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -75,21 +82,56 @@ public class FormProdutos extends JFrame {
 
 		scrollPane.setViewportView(tblProdutos);
 	}
-class EventoClick implements ActionListener {
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		JButton ob = (JButton) e.getSource();
-		switch (ob.getText()) {
-		case "Adicionar":
-		case "Consultar":
-		case "Alterar":
-		case "Excluir":
+	class EventoClick implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JButton ob = (JButton) e.getSource();
+			FormProdutosManutencao fmprod = new FormProdutosManutencao();
+			switch (ob.getText()) {
+			case "Adicionar":
+				fmprod.setTipoOperacao(1);
+				break;
+			case "Consultar":
+				fmprod.setTipoOperacao(2);
+				break;
+			case "Alterar":
+				fmprod.setTipoOperacao(3);
+				break;
+			case "Excluir":
+				fmprod.setTipoOperacao(4);
+				break;
+
+			}
+			int linhaSel = -1;
+			if (fmprod.getTipoOperacao() == 1) {
+				prod.novo();
+			} else {
+			 linhaSel = tblProdutos.getSelectedRow();
+				if (linhaSel > -1) {
+				int idProd = (int) tblMdProdutos.getValueAt(linhaSel, 0);
+				// posicionando o ID
+				prod.setId(idProd);
+				// efetuando a leitura
+				if (!prod.read())
+					;
+				{
+					JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+				}
+
+			}else {
+				JOptionPane.showMessageDialog(null, "Favor Selecionar uma linha para a operação!");
+			}
+			// setando o produto
+				if (linhaSel > -1) {
+			fmprod.setProd(prod);
+			fmprod.setVisible(true);
 			
-			
+
 		}
-		
+
 	}
-	
-}
+		}
+	}
 }
