@@ -8,9 +8,10 @@ public class TesteLeituraProduto {
 		// TODO Auto-generated method stub
 Produto prod =  new Produto();
 //indicando o produto que quero pesquisar
-prod.setId(1);
+//prod.setId(1);
 //verificando se existe
-if(prod.read()) {
+//if(prod.read()) {
+	if(prod.findByDescricao("Produto 1")) {
 	System.out.println("Encontrei o produto!");
 	System.out.println("Descrição:" + prod.getDescricao());
 	System.out.println("saldo:" + prod.getSaldo());

@@ -7,6 +7,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.table.DefaultTableModel;
+
 public class Cliente {
 private int id;
 private String nome;
@@ -138,6 +140,11 @@ public void setData_nasc(Date data_nasc) {
 public void setCep(String string) {
 	cep = string;
 	
+}
+
+public DefaultTableModel listaCliente() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 
