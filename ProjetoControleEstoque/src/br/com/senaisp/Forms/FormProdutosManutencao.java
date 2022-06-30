@@ -52,6 +52,8 @@ public class FormProdutosManutencao extends JFrame {
 	 * Create the frame.
 	 */
 	public FormProdutosManutencao() {
+		EventoClick evt = new EventoClick();
+		
 		setTitle("Manuten\u00E7\u00E3o Produtos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 700, 450);
@@ -65,9 +67,11 @@ public class FormProdutosManutencao extends JFrame {
 		
 		btnConfirmar = new JButton("Confirmar");
 		pnlBotoes.add(btnConfirmar);
+		btnConfirmar.addActionListener(evt);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		pnlBotoes.add(btnCancelar);
+		btnCancelar.addActionListener(evt);
 		
 		JPanel pnlMeio = new JPanel();
 		contentPane.add(pnlMeio, BorderLayout.NORTH);
